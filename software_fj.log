@@ -1,0 +1,53 @@
+2026-11-19 12:30:36,414 | INFO     | OPERACIÓN: 1. Registrar cliente válido (Ana)
+2026-11-19 12:30:36,432 | DEBUG    | Fin de operación: 1. Registrar cliente válido (Ana)
+2026-11-19 12:30:36,433 | INFO     | OPERACIÓN: 2. Registrar cliente con email inválido
+2026-11-19 12:30:36,433 | ERROR    | 2. Registrar cliente con email inválido -> ClienteInvalidoError: Email inválido: 'luis@@mail'
+2026-11-19 12:30:36,433 | DEBUG    | Fin de operación: 2. Registrar cliente con email inválido
+2026-11-19 12:30:36,433 | INFO     | OPERACIÓN: 3. Registrar cliente sin documento (parámetro faltante)
+2026-11-19 12:30:36,433 | ERROR    | 3. Registrar cliente sin documento (parámetro faltante) -> ParametroFaltanteError: Nombre, documento y email son obligatorios.
+2026-11-19 12:30:36,433 | DEBUG    | Fin de operación: 3. Registrar cliente sin documento (parámetro faltante)
+2026-11-19 12:30:36,433 | INFO     | OPERACIÓN: 4. Registrar cliente válido (Carlos)
+2026-11-19 12:30:36,433 | DEBUG    | Fin de operación: 4. Registrar cliente válido (Carlos)
+2026-11-19 12:30:36,434 | INFO     | OPERACIÓN: 5. Crear sala válida
+2026-11-19 12:30:36,434 | DEBUG    | Fin de operación: 5. Crear sala válida
+2026-11-19 12:30:36,434 | INFO     | OPERACIÓN: 6. Crear equipo con unidades inválidas
+2026-11-19 12:30:36,434 | ERROR    | 6. Crear equipo con unidades inválidas -> ServicioInvalidoError: Unidades inválidas: -3
+2026-11-19 12:30:36,434 | DEBUG    | Fin de operación: 6. Crear equipo con unidades inválidas
+2026-11-19 12:30:36,434 | INFO     | OPERACIÓN: 7. Crear alquiler de equipo válido
+2026-11-19 12:30:36,434 | DEBUG    | Fin de operación: 7. Crear alquiler de equipo válido
+2026-11-19 12:30:36,434 | INFO     | OPERACIÓN: 8. Crear asesoría válida (senior)
+2026-11-19 12:30:36,435 | DEBUG    | Fin de operación: 8. Crear asesoría válida (senior)
+2026-11-19 12:30:36,435 | INFO     | OPERACIÓN: 9. Reserva exitosa: Ana + sala 3h
+2026-11-19 12:30:36,435 | DEBUG    | Fin de operación: 9. Reserva exitosa: Ana + sala 3h
+2026-11-19 12:30:36,435 | INFO     | OPERACIÓN:    9a. Confirmar
+2026-11-19 12:30:36,436 | INFO     | Reserva #9 CONFIRMADA
+2026-11-19 12:30:36,436 | DEBUG    | Fin de operación:    9a. Confirmar
+2026-11-19 12:30:36,436 | INFO     | OPERACIÓN:    9b. Procesar con 10% de descuento
+2026-11-19 12:30:36,436 | INFO     | Reserva #9 PROCESADA. Total: $160,650.00
+2026-11-19 12:30:36,436 | DEBUG    | Fin de procesamiento de reserva #9 (estado: PROCESADA)
+2026-11-19 12:30:36,436 | DEBUG    | Fin de operación:    9b. Procesar con 10% de descuento
+2026-11-19 12:30:36,436 | INFO     | OPERACIÓN:    9c. Cancelar reserva ya procesada (no permitido)
+2026-11-19 12:30:36,437 | ERROR    |    9c. Cancelar reserva ya procesada (no permitido) -> OperacionNoPermitidaError: No se puede cancelar una reserva PROCESADA.
+2026-11-19 12:30:36,437 | DEBUG    | Fin de operación:    9c. Cancelar reserva ya procesada (no permitido)
+2026-11-19 12:30:36,437 | INFO     | OPERACIÓN: 10. Reserva con duración inválida (sala 20h)
+2026-11-19 12:30:36,480 | ERROR    | 10. Reserva con duración inválida (sala 20h) -> ReservaInvalidaError: No se pudo crear la reserva: Una sala se reserva entre 1 y 12 horas. | causa: ServicioInvalidoError('Una sala se reserva entre 1 y 12 horas.')
+2026-11-19 12:30:36,481 | DEBUG    | Fin de operación: 10. Reserva con duración inválida (sala 20h)
+2026-11-19 12:30:36,481 | INFO     | OPERACIÓN: 11. Reserva de servicio no disponible
+2026-11-19 12:30:36,481 | ERROR    | 11. Reserva de servicio no disponible -> ReservaInvalidaError: No se pudo crear la reserva: 'Portátil Gamer' no está disponible. | causa: ServicioNoDisponibleError("'Portátil Gamer' no está disponible.")
+2026-11-19 12:30:36,481 | DEBUG    | Fin de operación: 11. Reserva de servicio no disponible
+2026-11-19 12:30:36,481 | INFO     | OPERACIÓN: 12. Reserva Carlos + asesoría 2h
+2026-11-19 12:30:36,481 | DEBUG    | Fin de operación: 12. Reserva Carlos + asesoría 2h
+2026-11-19 12:30:36,482 | INFO     | OPERACIÓN:    12a. Procesar sin confirmar (no permitido)
+2026-11-19 12:30:36,482 | ERROR    | Reserva #12 no procesada: Debe estar CONFIRMADA para procesar (actual: PENDIENTE).
+2026-11-19 12:30:36,482 | DEBUG    | Fin de procesamiento de reserva #12 (estado: PENDIENTE)
+2026-11-19 12:30:36,482 | ERROR    |    12a. Procesar sin confirmar (no permitido) -> OperacionNoPermitidaError: Debe estar CONFIRMADA para procesar (actual: PENDIENTE).
+2026-11-19 12:30:36,482 | DEBUG    | Fin de operación:    12a. Procesar sin confirmar (no permitido)
+2026-11-19 12:30:36,482 | INFO     | OPERACIÓN:    12b. Cancelar
+2026-11-19 12:30:36,483 | INFO     | Reserva #12 CANCELADA
+2026-11-19 12:30:36,483 | DEBUG    | Fin de operación:    12b. Cancelar
+2026-11-19 12:30:36,483 | INFO     | OPERACIÓN: 13. Reserva con cliente nulo (encadenamiento)
+2026-11-19 12:30:36,483 | ERROR    | 13. Reserva con cliente nulo (encadenamiento) -> ReservaInvalidaError: No se pudo crear la reserva: cliente debe ser instancia de Cliente | causa: TypeError('cliente debe ser instancia de Cliente')
+2026-11-19 12:30:36,483 | DEBUG    | Fin de operación: 13. Reserva con cliente nulo (encadenamiento)
+2026-11-19 12:30:36,484 | INFO     | OPERACIÓN: 14. Costo con descuento inconsistente (150%)
+2026-11-19 12:30:36,484 | ERROR    | 14. Costo con descuento inconsistente (150%) -> CalculoInconsistenteError: Impuesto/descuento fuera de rango: 0.19, 1.5
+2026-11-19 12:30:36,484 | DEBUG    | Fin de operación: 14. Costo con descuento inconsistente (150%)
